@@ -13,7 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 
-const qs = require('query-string');
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -62,31 +62,31 @@ const SendMail = () => {
   const [message, setMessage] = useState('')
 
 
-  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (subject && name && email && message) {
       console.log('sending email')
-const emailData = {
-    "subject": subject,
-    "name": name,
-    "email": email,
-    "message": message
-  }
-const jwt = localStorage.getItem('token')
-const url = 'http://localhost:3001/contacts'
+      const emailData = {
+        "subject": subject,
+        "name": name,
+        "email": email,
+        "message": message
+      }
+      const jwt = localStorage.getItem('token')
+      const url = 'http://localhost:3001/contacts'
 
       try {
-        const res = await axios.post(url, { emailData },{headers: {Authorization: `Bearer ${jwt}` } });
+        const res = await axios.post(url, { emailData }, { headers: { Authorization: `Bearer ${jwt}` } });
         // const { token, user } = res.data;
         console.log('res', res);
         // setLoggedIn(true);
         // onCloseSignupModal()
         // if (token) {
-          // setLoggedIn(true);
-          // onCloseSignupModal()
-          // localStorage.setItem('token', token);
-          // console.log('jwt: ', token)
+        // setLoggedIn(true);
+        // onCloseSignupModal()
+        // localStorage.setItem('token', token);
+        // console.log('jwt: ', token)
         // }
       }
       catch (error) {

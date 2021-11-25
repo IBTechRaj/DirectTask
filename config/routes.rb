@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     sessions: :sessions
   }
 
-  root to: "home#index"
+  # root to: "home#index"
+  root 'contacts#index'
+  resources :contacts
 end
