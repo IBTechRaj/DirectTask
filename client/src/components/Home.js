@@ -15,21 +15,21 @@ import Dialog from '@material-ui/core/Dialog';
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  // root: {
     // background: '#ffffff',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: theme.spacing(2),
+    // display: 'flex',
+    // flexDirection: 'column',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // padding: theme.spacing(2),
 
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: '300px',
-    },
-    '& .MuiButtonBase-root': {
-      margin: theme.spacing(2),
-    },
+    // '& .MuiTextField-root': {
+    //   margin: theme.spacing(1),
+    //   width: '300px',
+    // },
+    // '& .MuiButtonBase-root': {
+    //   margin: theme.spacing(2),
+    // },
     
   // },
   // navlinks: {
@@ -49,16 +49,21 @@ const useStyles = makeStyles((theme) => ({
   //     color: "yellow",
   //     borderBottom: "1px solid white",
   //   },
-  },
+  // },
   body: {
       background: '#61DAFB',
+      height: '80vh',
+      alignItems: 'center',
+      display:'flex',
+flexDirection: 'column',
+justifyContent: 'center',
     },
-  message: {
-    justifyContent: 'center',
-      background: '#61DAFB',
-      padding: theme.spacing(2),
-      margin: theme.spacing(1),
-  }
+  // message: {
+  //   justifyContent: 'center',
+  //     background: '#98D4F1',
+  //     padding: theme.spacing(2),
+  //     margin: theme.spacing(1),
+  // }
 }));
 
 
@@ -107,50 +112,10 @@ const SendMail = () => {
 
   return (
     <div className={classes.body}>
-    <h4 align='center' className={classes.message}> You can refer your friends by sending an email from here </h4>
-      <h2 align='center' >Email Details</h2>
-      <form className={classes.root} onSubmit={handleSubmit}>
-        <TextField
-          label="Subject"
-          variant="outlined"
-          type="text"
-          required
-          value={subject}
-          onChange={e => setSubject(e.target.value)}
-        />
-        <TextField
-          label="Name"
-          variant="outlined"
-          type="text"
-          required
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
-        <TextField
-          label="Email"
-          variant="outlined"
-          type="email"
-          required
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-        <TextField
-          label="Message"
-          variant="outlined"
-          type="text"
-          required
-          value={message}
-          onChange={e => setMessage(e.target.value)}
-        />
-        <div>
-          {/* <Button variant="contained" onClick={onCloseLoginModal}>
-            Cancel
-          </Button> */}
-          <Button type="submit" variant="contained" color="primary">
-            Send Mail
-          </Button>
-        </div>
-      </form>
+    <h1> Welcome to Shift Hospitals</h1>
+    <h4 > You can refer your friends by sending an email from here </h4>
+      <h2>Login to Refer</h2>
+      
     </div>
   )
 

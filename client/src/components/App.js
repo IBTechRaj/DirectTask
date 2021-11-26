@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import SendMail from './SendMail'
+import Home from './Home'
 // import Home from "./pages/home";
 // import About from "./pages/about";
 // import Contact from "./pages/contact";
@@ -18,7 +19,8 @@ function App() {
   return (
     <Router>
       <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-      <SendMail />
+       {loggedIn ? (<SendMail />) : (<Home />)}
+      
       <Routes>
         {/* <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
