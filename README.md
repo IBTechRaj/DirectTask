@@ -1,25 +1,25 @@
-# README
+# Direct Task
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Direct Task is a Rails React Full Stack assignment project by DirectShifts as part of recruitment
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+* Clone the repo or download zip
 
-* System dependencies
+* In the root folder run 
+    - bundle install
+    - rails db:create
+    - rails db:migrate
+    - rails s -p 3001 (to start the server)
 
-* Configuration
+* cd to client folder for frontend
+    - run npm install
+    - run npm start
 
-* Database creation
+## Features
+    - Rails backend with Devise and JWT
+    - React frontend with Material UI
+    - SendGrid for Email service
+    - A user can signup and then signin to send referral emails
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# DirectTask
+* Note: SendGrid is the email service implemented but due to change in their usage requirements which involve downloading an app having two step verification, etc. user authentication is not taking place and hence emails not sent though they are generated in the backend.
