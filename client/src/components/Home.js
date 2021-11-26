@@ -1,69 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import {
-  AppBar,
-  Toolbar,
-  CssBaseline,
-  Typography,
   makeStyles,
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import 'react-responsive-modal/styles.css';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
+// import { Link } from "react-router-dom";
+// import 'react-responsive-modal/styles.css';
+// import TextField from '@material-ui/core/TextField';
+// import Button from '@material-ui/core/Button';
+// import Dialog from '@material-ui/core/Dialog';
 
 
 const useStyles = makeStyles((theme) => ({
-  // root: {
-    // background: '#ffffff',
-    // display: 'flex',
-    // flexDirection: 'column',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // padding: theme.spacing(2),
-
-    // '& .MuiTextField-root': {
-    //   margin: theme.spacing(1),
-    //   width: '300px',
-    // },
-    // '& .MuiButtonBase-root': {
-    //   margin: theme.spacing(2),
-    // },
-    
-  // },
-  // navlinks: {
-  //   marginLeft: theme.spacing(10),
-  //   display: "flex",
-  // },
-  // logo: {
-  //   flexGrow: "1",
-  //   cursor: "pointer",
-  // },
-  // link: {
-  //   textDecoration: "none",
-  //   color: "white",
-  //   fontSize: "20px",
-  //   marginLeft: theme.spacing(20),
-  //   "&:hover": {
-  //     color: "yellow",
-  //     borderBottom: "1px solid white",
-  //   },
-  // },
   body: {
       background: '#61DAFB',
       height: '80vh',
       alignItems: 'center',
       display:'flex',
-flexDirection: 'column',
-justifyContent: 'center',
+      flexDirection: 'column',
+      justifyContent: 'center',
     },
-  // message: {
-  //   justifyContent: 'center',
-  //     background: '#98D4F1',
-  //     padding: theme.spacing(2),
-  //     margin: theme.spacing(1),
-  // }
 }));
 
 

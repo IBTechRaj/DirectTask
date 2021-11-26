@@ -1,22 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import {
-  AppBar,
-  Toolbar,
-  CssBaseline,
-  Typography,
   makeStyles,
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import 'react-responsive-modal/styles.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // background: '#ffffff',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -30,25 +23,6 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiButtonBase-root': {
       margin: theme.spacing(2),
     },
-    
-  // },
-  // navlinks: {
-  //   marginLeft: theme.spacing(10),
-  //   display: "flex",
-  // },
-  // logo: {
-  //   flexGrow: "1",
-  //   cursor: "pointer",
-  // },
-  // link: {
-  //   textDecoration: "none",
-  //   color: "white",
-  //   fontSize: "20px",
-  //   marginLeft: theme.spacing(20),
-  //   "&:hover": {
-  //     color: "yellow",
-  //     borderBottom: "1px solid white",
-  //   },
   },
   body: {
       background: '#61DAFB',
@@ -62,8 +36,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const SendMail = () => {
-
+  const SendMail = () => {
 
   const classes = useStyles();
 
@@ -143,9 +116,6 @@ const SendMail = () => {
           onChange={e => setMessage(e.target.value)}
         />
         <div>
-          {/* <Button variant="contained" onClick={onCloseLoginModal}>
-            Cancel
-          </Button> */}
           <Button type="submit" variant="contained" color="primary">
             Send Mail
           </Button>

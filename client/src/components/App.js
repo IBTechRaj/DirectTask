@@ -1,17 +1,13 @@
 import React from "react";
 import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./Navbar";
 import SendMail from './SendMail'
 import Home from './Home'
-// import Home from "./pages/home";
-// import About from "./pages/about";
-// import Contact from "./pages/contact";
-// import Faq from "./pages/faq"; 
 
-const getLoggedStatus = () => {
-  let loggedIn
-}
+// const getLoggedStatus = () => {
+//   let loggedIn
+// }
 
 
 function App() {
@@ -19,14 +15,7 @@ function App() {
   return (
     <Router>
       <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-       {loggedIn ? (<SendMail />) : (<Home />)}
-      
-      <Routes>
-        {/* <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/faq" component={Faq} /> */}
-      </Routes>
+       {loggedIn ? (<SendMail />) : (<Home />)}      
     </Router>
   );
 }

@@ -13,7 +13,6 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 
-// const qs = require('query-string');
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -53,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = ({ loggedIn, setLoggedIn }) => {
 
-  const [click, setClick] = useState(false);
+  // const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
   const [openLogin, setOpenLogin] = useState(false);
@@ -74,13 +73,9 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
     setOpenSignup(false)
   };
 
-
-
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
-
-
 
   const loginData = {
     "email": email,
@@ -92,18 +87,15 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
     "password": password,
   }
 
-
-
   const handleSubmitSignup = async (event) => {
     event.preventDefault();
     if (password === passwordConfirmation) {
       console.log('signing up')
       try {
         const res = await axios.post('http://localhost:3001/users ', signupData);
-        const { token, user } = res.data;
-        console.log('res', res.data);
-        setLoggedIn(true);
-        onCloseSignupModal()
+        const  token = res.data;
+        console.log('token', token);
+       
         if (token) {
           setLoggedIn(true);
           onCloseSignupModal()
@@ -141,33 +133,6 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
     }
   }
 
-  //   const handleSubmitLogin = async (event) => {
-  //     event.preventDefault();
-  //     console.log('logging')
-  //     try {
-  //       const res = await axios.post('http://localhost:3001/users/sign_in ', qs.stringify({
-  //     "email": email,
-  //     "password": password,
-  //   }),
-  //   {
-  //     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-  //   }
-  // );
-  //       const { token, user } = res.data;
-  //       console.log('res', res);
-  //       if (token) {
-  //         setLoggedIn(true);
-  //         onCloseLoginModal()
-  //         localStorage.setItem('token', token);
-  //         console.log('jwt: ', token)
-  //       }
-  //     }
-  //     catch (error) {
-  //       console.log('Err: ', error);
-  //     }
-  //   }
-
-
   const handleLogout = () => {
     delete axios.defaults.headers.common.Authorization;
     setLoggedIn(false)
@@ -189,7 +154,6 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
       window.removeEventListener('resize', showButton)
     )
   }, []);
-
 
 
   const classes = useStyles();
