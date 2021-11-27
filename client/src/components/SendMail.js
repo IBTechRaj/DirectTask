@@ -25,18 +25,18 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   body: {
-      background: '#61DAFB',
-    },
+    background: '#61DAFB',
+  },
   message: {
     justifyContent: 'center',
-      background: '#61DAFB',
-      padding: theme.spacing(2),
-      margin: theme.spacing(1),
+    background: '#61DAFB',
+    padding: theme.spacing(2),
+    margin: theme.spacing(1),
   }
 }));
 
 
-  const SendMail = () => {
+const SendMail = () => {
 
   const classes = useStyles();
 
@@ -50,24 +50,26 @@ const useStyles = makeStyles((theme) => ({
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (subject && name && email && message) {
-      console.log('sending email')
+
       const emailData = {
         "subject": subject,
         "name": name,
         "email": email,
         "message": message
       }
+      console.log('sending email', emailData)
+      console.log('email:', emailData)
       const jwt = localStorage.getItem('token')
       const url = 'http://localhost:3001/contacts'
 
       try {
-        const res = await axios.post(url, { emailData }, { headers: { Authorization: `Bearer ${jwt}` } });
+        const res = await axios.post(url, emailData, { headers: { Authorization: `Bearer ${jwt}` } });
         console.log('res', res);
         setSubject('')
         setName('')
         setEmail('')
         setMessage('')
-      
+
       }
       catch (error) {
         console.log('oh, no', error);
@@ -80,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
 
   return (
     <div className={classes.body}>
-    <h4 align='center' className={classes.message}> You can refer your friends by sending an email from here </h4>
+      <h4 align='center' className={classes.message}> You can refer your friends by sending an email from here </h4>
       <h2 align='center' >Email Details</h2>
       <form className={classes.root} onSubmit={handleSubmit}>
         <TextField
